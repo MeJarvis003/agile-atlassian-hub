@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -73,6 +72,19 @@ const Services = () => {
         "Performance monitoring"
       ],
       timeline: "2-3 weeks",
+      category: "Automation"
+    },
+    {
+      title: "Automation Implementation",
+      description: "Advanced automation solutions to eliminate manual tasks and boost productivity",
+      features: [
+        "Custom automation rule development",
+        "Smart notification and escalation systems",
+        "Automated issue transitions and assignments",
+        "Cross-platform integration automation",
+        "Performance metrics and optimization"
+      ],
+      timeline: "3-4 weeks",
       category: "Automation"
     },
     {
