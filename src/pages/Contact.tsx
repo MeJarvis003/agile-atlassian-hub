@@ -40,10 +40,11 @@ const Contact = () => {
     'Other'
   ];
 
-  const handleServiceChange = (service: string, checked: boolean) => {
+  const handleServiceChange = (service: string, checked: boolean | "indeterminate") => {
+    const isChecked = checked === true;
     setFormData(prev => ({
       ...prev,
-      services: checked 
+      services: isChecked 
         ? [...prev.services, service]
         : prev.services.filter(s => s !== service)
     }));
@@ -231,7 +232,7 @@ const Contact = () => {
                               <Checkbox
                                 id={service}
                                 checked={formData.services.includes(service)}
-                                onCheckedChange={(checked) => handleServiceChange(service, checked)}
+                                onCheckedChange={(checked) => handleServiceChange(service, checked || false)}
                               />
                               <Label htmlFor={service} className="text-sm">{service}</Label>
                             </div>
@@ -289,7 +290,7 @@ const Contact = () => {
                         <Checkbox
                           id="newsletter"
                           checked={formData.newsletter}
-                          onCheckedChange={(checked) => setFormData(prev => ({ ...prev, newsletter: checked }))}
+                          onCheckedChange={(checked) => setFormData(prev => ({ ...prev, newsletter: checked === true }))}
                         />
                         <Label htmlFor="newsletter" className="text-sm">
                           Subscribe to newsletter for Atlassian tips and industry insights
